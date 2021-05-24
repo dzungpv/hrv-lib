@@ -1,13 +1,13 @@
 package hrv.lib.units;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class TimeUnitConverterTest {
+public class TimeUnitConverterTest {
 
 	@Test
-	void testSingleValues() {
+	public void testSingleValues() {
 		TimeUnitConverter converter = new TimeUnitConverter();
 		
 		double result1 = converter.convert(12.0, TimeUnit.SECOND, TimeUnit.MILLISECOND);
@@ -24,7 +24,7 @@ class TimeUnitConverterTest {
 	}
 	
 	@Test
-	void testArray() {
+	public void testArray() {
 		TimeUnitConverter converter = new TimeUnitConverter();
 		
 		double[] data = new double[] {1.0,2.0,3.0};

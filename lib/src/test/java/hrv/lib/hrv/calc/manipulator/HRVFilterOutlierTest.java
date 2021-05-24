@@ -2,14 +2,14 @@ package hrv.lib.hrv.calc.manipulator;
 
 import hrv.lib.hrv.RRData;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.Assert.*;
 
-class HRVFilterOutlierTest {
+public class HRVFilterOutlierTest {
 
 	@Test
-	void testManipulate() {
+	public void testManipulate() {
 		
 		RRData data = RRData.createFromRRInterval(new double[] {1,1,1,1,1,1,1,1,1,1}, TimeUnit.SECOND);
 		

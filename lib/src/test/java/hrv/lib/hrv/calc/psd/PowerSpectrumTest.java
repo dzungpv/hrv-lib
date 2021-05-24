@@ -1,13 +1,13 @@
 package hrv.lib.hrv.calc.psd;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class PowerSpectrumTest {
+public class PowerSpectrumTest {
 
 	@Test
-	void testAdd() {
+	public void testAdd() {
 		double[] power1 = new double[] { 1.0, 2.0, 3.0 };
 		double[] power2 = new double[] { 3.0, 2.0, 1.0, 1.0 };
 		

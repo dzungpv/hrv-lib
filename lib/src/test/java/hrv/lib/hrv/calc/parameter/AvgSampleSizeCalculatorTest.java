@@ -2,14 +2,14 @@ package hrv.lib.hrv.calc.parameter;
 
 import hrv.lib.hrv.RRData;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class AvgSampleSizeCalculatorTest {
+public class AvgSampleSizeCalculatorTest {
 
 	@Test
-	void testSampleSizeCalculation() {
+	public void testSampleSizeCalculation() {
 		
 		double[] timeData1 = new double[] { 1.0, 2.0, 3.0, 4.0 };
 		double[] timeData2 = new double[] { 0.0, 2.0, 2.5, 4.0 };

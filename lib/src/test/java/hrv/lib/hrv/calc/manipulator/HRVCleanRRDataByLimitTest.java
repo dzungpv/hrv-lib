@@ -7,18 +7,18 @@ import java.nio.file.Paths;
 import hrv.lib.hrv.RRData;
 import hrv.lib.hrv.files.HRVIBIFileReader;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.Before;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class HRVCleanRRDataByLimitTest {
+public class HRVCleanRRDataByLimitTest {
 
 	private RRData dataWithDefects;
 	private RRData cleanedData;
 	
-	@BeforeEach
-	void loadData() throws IOException {
+	@Before
+	public void loadData() throws IOException {
 		HRVIBIFileReader reader = new HRVIBIFileReader();
 		
 		Path currentDirectory = Paths.get(System.getProperty("user.dir"));
@@ -32,7 +32,7 @@ class HRVCleanRRDataByLimitTest {
 	}
 	
 	@Test
-	void testFunction() {
+	public void testFunction() {
 		
 		HRVCleanRRDataByLimits cleaner = new HRVCleanRRDataByLimits();
 		RRData hereCleanedData = cleaner.manipulate(dataWithDefects);

@@ -19,7 +19,7 @@ public class HRVIBIFileReader {
 	public RRData readIBIFile(String filePath, TimeUnit unit) throws IOException {
 		List<Double> rr = new ArrayList<>();
 		
-		try(var reader = new BufferedReader(new FileReader(filePath))) {
+		try(BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
 			for(String line; (line = reader.readLine()) != null; ) {
 				rr.add(Double.parseDouble(line));
 			}

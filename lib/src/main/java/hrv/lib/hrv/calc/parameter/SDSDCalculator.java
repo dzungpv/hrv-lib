@@ -8,13 +8,13 @@ public class SDSDCalculator implements HRVDataProcessor {
 	@Override
 	public HRVParameter process(RRData data) {
 		double[] rr = data.getValueAxis();
-		var rrDiff = new double[rr.length - 1];
+		double[] rrDiff = new double[rr.length - 1];
 
-		for (var i = 0; i < rr.length - 1; i++) {
+		for (int i = 0; i < rr.length - 1; i++) {
 			rrDiff[i] = rr[i] - rr[i + 1];
 		}
 
-		var d = new StandardDeviation();
+		StandardDeviation d = new StandardDeviation();
 		return new HRVParameter(HRVParameterEnum.SDSD,d.evaluate(rrDiff), "non");
 	}
 

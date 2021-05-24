@@ -2,14 +2,14 @@ package hrv.lib.hrv.calc.manipulator;
 
 import hrv.lib.hrv.RRData;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class HRVSubtractMeanManipulatorTest {
+public class HRVSubtractMeanManipulatorTest {
 
 	@Test
-	void testSub() {
+	public void testSub() {
 		double[] time1 = new double[] { 0.0, 1.0, 2.0, 4.0 };
 		double[] values1 = new double[] { 0.0, 1.0, 2.0, 4.0 };
 		RRData data = new RRData(time1, TimeUnit.SECOND, values1, TimeUnit.SECOND);

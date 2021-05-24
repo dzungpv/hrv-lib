@@ -2,15 +2,14 @@ package hrv.lib.hrv;
 
 import hrv.lib.hrv.calc.parameter.HRVParameter;
 import hrv.lib.hrv.calc.parameter.HRVParameterEnum;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.Assert.*;
 
-class HRVParameterTest {
+public class HRVParameterTest {
 
 	@Test
-	void creationTests() {
+	public void creationTests() {
 		
 		HRVParameter param1 = new HRVParameter();
 		assertEquals(0.0, param1.getValue(), 0.000001);

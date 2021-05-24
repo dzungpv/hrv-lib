@@ -24,23 +24,23 @@ public class HRVSplineInterpolator implements HRVDataManipulator {
 		double[] x = data.getTimeAxis();
 
 		// Interpolate data
-		var interpolator = new SplineInterpolator();
+		SplineInterpolator interpolator = new SplineInterpolator();
 
 		PolynomialSplineFunction interpolFunction = interpolator.interpolate(x, y);
 
 		// Calculate number of data points to be sampled for the given sampling
 		// rate
 		double biggestXValue = x[x.length - 1];
-		var numInterpolVals = (int) (biggestXValue * samplingRate);
+		int numInterpolVals = (int) (biggestXValue * samplingRate);
 
 		// Sample interpolated data
-		var xInterpolated = new double[numInterpolVals];
-		var yInterpolated = new double[numInterpolVals];
+		double[] xInterpolated = new double[numInterpolVals];
+		double[] yInterpolated = new double[numInterpolVals];
 
 		// Sampling Step Size in seconds
 		double stepSize = 1 / samplingRate;
 
-		for (var i = 0; i < numInterpolVals; i++) {
+		for (int i = 0; i < numInterpolVals; i++) {
 			xInterpolated[i] = stepSize * i;
 			yInterpolated[i] = interpolFunction.value(xInterpolated[i]);
 		}

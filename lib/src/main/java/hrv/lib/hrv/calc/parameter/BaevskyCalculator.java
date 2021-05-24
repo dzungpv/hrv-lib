@@ -14,7 +14,7 @@ public class BaevskyCalculator implements HRVDataProcessor {
     @Override
     public HRVParameter process(RRData rrInterval) {
 
-        var histogram = new Histogram(rrInterval.getValueAxis());
+        Histogram histogram = new Histogram(rrInterval.getValueAxis());
 
         return new HRVParameter(HRVParameterEnum.BAEVSKY,
                 histogram.getAmplitudeMode() / (2 * histogram.getMode() * histogram.getRange()),

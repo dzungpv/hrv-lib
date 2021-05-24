@@ -27,7 +27,7 @@ public class HRVZeroPadToPowerOfTwoManipulator implements HRVDataManipulator {
 
 		double[] newY = ArrayUtils.padZeros(data.getValueAxis(), numOfNewNumbers);
 
-		var calc = new AvgSampleSizeCalculator();
+		AvgSampleSizeCalculator calc = new AvgSampleSizeCalculator();
 		double avgSampleSize = calc.process(data).getValue();
 		double[] newX = ArrayUtils.continueWith(data.getTimeAxis(), avgSampleSize, numOfNewNumbers);
 

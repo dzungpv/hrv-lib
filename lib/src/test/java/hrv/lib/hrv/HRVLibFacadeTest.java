@@ -6,14 +6,14 @@ import java.util.List;
 import hrv.lib.hrv.calc.parameter.HRVParameter;
 import hrv.lib.hrv.calc.parameter.HRVParameterEnum;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class HRVLibFacadeTest {
+public class HRVLibFacadeTest {
 
 	@Test
-	void testDefaultParamCalculation() {
+	public void testDefaultParamCalculation() {
 		RRData data = RRData.createFromRRInterval(new double[] {1,1,1,1,1,1,1,1}, TimeUnit.SECOND);
 		
 		HRVLibFacade facade = new HRVLibFacade(data);
@@ -23,7 +23,7 @@ class HRVLibFacadeTest {
 	}
 	
 	@Test
-	void testParamCalculation() {
+	public void testParamCalculation() {
 		RRData data = RRData.createFromRRInterval(new double[] {1,1,1,1,1,1,1,1}, TimeUnit.SECOND);
 		
 		HRVLibFacade facade = new HRVLibFacade(data);

@@ -1,16 +1,15 @@
 package hrv.lib.common;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class ArrayUtilsTest {
+public class ArrayUtilsTest {
 
 	@Test
-	void testListToPrimitiveWithDefaultValue() {
+	public void testListToPrimitiveWithDefaultValue() {
 		ArrayList<Double> list = new ArrayList<>();
 		list.add(1.0);
 		list.add(2.0);
@@ -26,7 +25,7 @@ class ArrayUtilsTest {
 	}
 
 	@Test
-	void testListToPrimitiveIgnoreNull() {
+	public void testListToPrimitiveIgnoreNull() {
 		ArrayList<Double> list = new ArrayList<>();
 		list.add(1.0);
 		list.add(2.0);
@@ -42,7 +41,7 @@ class ArrayUtilsTest {
 	}
 
 	@Test
-	void testArrayToPrimitive() {
+	public void testArrayToPrimitive() {
 		Double[] array = new Double[] { 1.0, 2.0, 3.0, 4.0, null };
 		double[] primitiveArray = ArrayUtils.toPrimitive(array, 5.0);
 
@@ -52,7 +51,7 @@ class ArrayUtilsTest {
 	}
 	
 	@Test
-	void testArrayToPrimitiveIgnoreNull() {
+	public void testArrayToPrimitiveIgnoreNull() {
 		Double[] array = new Double[] { 1.0, 2.0, 3.0, 4.0, null };
 		double[] primitiveArray = ArrayUtils.toPrimitiveIgnoreNull(array);
 
@@ -62,19 +61,19 @@ class ArrayUtilsTest {
 	}
 
 	@Test
-	void testMin() {
+	public void testMin() {
 		double[] arr = new double[] { 1.0, 2.0, 0.0, 100.0, 99.9999, 0.000001 };
 		assertEquals(0.0, ArrayUtils.min(arr), 0.0000000001);
 	}
 
 	@Test
-	void testMax() {
+	public void testMax() {
 		double[] arr = new double[] { 1.0, 2.0, 0.0, 100.0, 99.9999, 0.000001 };
 		assertEquals(100.0, ArrayUtils.max(arr), 0.0000000001);
 	}
 
 	@Test
-	void testPadZeros() {
+	public void testPadZeros() {
 		double[] arr = new double[] { 1.0, 2.0, 0.0, 100.0, 99.9999, 0.000001 };
 		double[] paddedArr = ArrayUtils.padZeros(arr, 4);
 		assertEquals(100.0, paddedArr[3], 0.0000000001);
@@ -85,7 +84,7 @@ class ArrayUtilsTest {
 	}
 
 	@Test
-	void testPadNoZeroes() {
+	public void testPadNoZeroes() {
 		double[] arr = new double[] { 1.0, 2.0, 0.0, 100.0, 99.9999, 0.000001 };
 		double[] paddedArr = ArrayUtils.padZeros(arr, 0);
 
@@ -94,13 +93,13 @@ class ArrayUtilsTest {
 		assertEquals(arr.length, paddedArr.length);
 	}
 	
-	@Test
-	void testForPadZerosForIllegalArgumentException() {
-		Assertions.assertThrows(IllegalArgumentException.class, () -> ArrayUtils.padZeros(new double[] {1.0}, -1));
+	@Test(expected=IllegalArgumentException.class)
+	public void testForPadZerosForIllegalArgumentException() {
+		ArrayUtils.padZeros(new double[] {1.0}, -1);
 	}
 
 	@Test
-	void testPadToEmptyArray() {
+	public void testPadToEmptyArray() {
 		double[] arr = new double[0];
 
 		double[] paddedArr = ArrayUtils.padZeros(arr, 10);
@@ -112,7 +111,7 @@ class ArrayUtilsTest {
 	}
 
 	@Test
-	void testContinueWith() {
+	public void testContinueWith() {
 		double[] arr = new double[] { 0.0, 1.0, 2.0 };
 		double[] newArr = ArrayUtils.continueWith(arr, 1.0, 2);
 
@@ -129,7 +128,7 @@ class ArrayUtilsTest {
 	}
 
 	@Test
-	void testContinueWithZeroLengthArray() {
+	public void testContinueWithZeroLengthArray() {
 		double[] arr = new double[0];
 		double[] newArr = ArrayUtils.continueWith(arr, 2.0, 2);
 
@@ -139,7 +138,7 @@ class ArrayUtilsTest {
 	}
 
 	@Test
-	void testContinueWithDontContinue() {
+	public void testContinueWithDontContinue() {
 		double[] arr = new double[0];
 		double[] newArr = ArrayUtils.continueWith(arr, 1.0, 0);
 		assertEquals(0, newArr.length);
@@ -149,9 +148,8 @@ class ArrayUtilsTest {
 		assertEquals(3, newArr2.length);
 	}
 	
-	@Test
-	void testContinueWithForIllegalArgumentException() {
-		Assertions.assertThrows(IllegalArgumentException.class, () ->
-		ArrayUtils.continueWith(new double[] {0.0}, 2, -100));
+	@Test(expected=IllegalArgumentException.class)
+	public void testContinueWithForIllegalArgumentException() {
+		ArrayUtils.continueWith(new double[] {0.0}, 2, -100);
 	}
 }

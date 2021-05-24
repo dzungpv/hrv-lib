@@ -2,13 +2,14 @@ package hrv.lib.hrv.calc.manipulator;
 
 import hrv.lib.hrv.RRData;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Test;
 
-class HRVZeroPaddingManipulatorTest {
+import static org.junit.Assert.*;
+
+public class HRVZeroPaddingManipulatorTest {
 
 	@Test
-	void testPadding() {
+	public void testPadding() {
 		double[] time2 = new double[] { 0.0, 1.0, 2.0, 3.0, 4.0 };
 		double[] values2 = new double[] { 1.0, 1.1, 1.2, 0.9, 1.0 };
 		RRData data2 = new RRData(time2, TimeUnit.SECOND, values2, TimeUnit.SECOND);
@@ -30,7 +31,7 @@ class HRVZeroPaddingManipulatorTest {
 	}
 	
 	@Test
-	void testNoPadding() {
+	public void testNoPadding() {
 		double[] time1 = new double[] { 0.0, 1.0, 2.0, 4.0 };
 		double[] values1 = new double[] { 1.0, 1.1, 1.2, 0.9 };
 		RRData data = new RRData(time1, TimeUnit.SECOND, values1, TimeUnit.SECOND);

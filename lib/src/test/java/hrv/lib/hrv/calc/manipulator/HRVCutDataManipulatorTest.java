@@ -3,14 +3,14 @@ package hrv.lib.hrv.calc.manipulator;
 
 import hrv.lib.hrv.RRData;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class HRVCutDataManipulatorTest {
+public class HRVCutDataManipulatorTest {
 
 	@Test
-	void cutTest() {
+	public void cutTest() {
 		RRData data = RRData.createFromRRInterval(new double[] { 1.0, 1.1, 1.2, 0.9, 1.0 }, TimeUnit.SECOND);
 		
 		HRVCutDataManipulator cutter = new HRVCutDataManipulator(3);

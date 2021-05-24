@@ -28,7 +28,7 @@ public class HRVCleanRRDataByLimits implements HRVDataManipulator {
 	private Set<Integer> getIndicesToRemoveByLimit(double[] data) {
 		Set<Integer> indicesToRemove = new HashSet<>();
 
-		for (var i = 0; i < data.length; i++) {
+		for (int i = 0; i < data.length; i++) {
 			if (data[i] < LOWER_RR_LIMIT || data[i] > UPPER_RR_LIMIT) {
 				indicesToRemove.add(i);
 			}
@@ -38,9 +38,9 @@ public class HRVCleanRRDataByLimits implements HRVDataManipulator {
 	}
 
 	private double[] removeIndices(double[] data, Set<Integer> indicesToRemove) {
-		var newData = new ArrayList<Double>();
+		List<Double> newData = new ArrayList<Double>();
 
-		for (var i = 0; i < data.length; i++) {
+		for (int i = 0; i < data.length; i++) {
 			if (!indicesToRemove.contains(i)) {
 				newData.add(data[i]);
 			}

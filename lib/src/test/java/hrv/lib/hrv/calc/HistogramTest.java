@@ -1,25 +1,24 @@
 package hrv.lib.hrv.calc;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.Assert.*;
 
-class HistogramTest {
+public class HistogramTest {
 
-	@Test
-	void testHistogram() {
-		assertThrows(IllegalArgumentException.class, () -> new Histogram(new double[] {0.0}));
+	@Test(expected=IllegalArgumentException.class)
+	public void testHistogram() {
+		new Histogram(new double[] {0.0});
 	}
 
 	@Test
-	void testGetRange() {
+	public void testGetRange() {
 		Histogram histogram = new Histogram(new double[] {0.3, 0.0, 1.0});
 		assertEquals(1.0, histogram.getRange(), Double.MIN_VALUE);
 	}
 
 	@Test
-	void testGetBinSize() {
+	public void testGetBinSize() {
 		Histogram histogram = new Histogram(new double[] {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0});
 		assertEquals(3.0, histogram.getBinSize(), Double.MIN_VALUE);
 		
@@ -29,7 +28,7 @@ class HistogramTest {
 	}
 
 	@Test
-	void testSetBinSize() {
+	public void testSetBinSize() {
 		Histogram histogramBin = new Histogram(new double[] {0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0});
 		
 		histogramBin.setBinSize(2.0);
@@ -45,13 +44,13 @@ class HistogramTest {
 	}
 
 	@Test
-	void testGetMode() {
+	public void testGetMode() {
 		Histogram histogram = new Histogram(new double[] {0.0,1.0,2.0,3.0,1.0,1.0,6.0,1.0,8.0,9.0});
 		assertEquals(0.0, histogram.getMode(), Double.MIN_VALUE);
 	}
 
 	@Test
-	void testGetAmplitudeMode() {
+	public void testGetAmplitudeMode() {
 		Histogram histogram = new Histogram(new double[] {0.0,1.0,2.0,3.0,1.0,1.0,6.0,1.0,8.0,9.0});
 		assertEquals(6, histogram.getAmplitudeMode());
 	}

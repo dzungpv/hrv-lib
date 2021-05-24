@@ -18,8 +18,8 @@ public class PowerSpectrumIntegralCalculator implements HRVPowerSpectrumProcesso
 
     @Override
     public HRVParameter process(PowerSpectrum ps) {
-        var psAdapter = new PowerSpectrumUnivariateFunctionAdapter(ps);
-        var integrator = new TrapezoidIntegrator();
+        PowerSpectrumUnivariateFunctionAdapter psAdapter = new PowerSpectrumUnivariateFunctionAdapter(ps);
+        TrapezoidIntegrator integrator = new TrapezoidIntegrator();
         return new HRVParameter(HRVParameterEnum.NON,
                 integrator.integrate(BaseAbstractUnivariateIntegrator.DEFAULT_MAX_ITERATIONS_COUNT,
                         psAdapter,

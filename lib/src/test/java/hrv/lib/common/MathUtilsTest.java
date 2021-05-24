@@ -1,15 +1,15 @@
 package hrv.lib.common;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.math.RoundingMode;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class MathUtilsTest {
+public class MathUtilsTest {
 
 	@Test
-	void testRound() {
+	public void testRound() {
 		double num = 111.1111111111111111;
 		
 		double roundedNum = MathUtils.round(num, 2);		
@@ -20,13 +20,13 @@ class MathUtilsTest {
 	}
 	
 	@Test
-	void testAlmostEquals() {
+	public void testAlmostEquals() {
 		assertFalse(MathUtils.almostEqual(0.0, 0.1, 0.01));
 		assertTrue(MathUtils.almostEqual(0.0, 0.01, 0.1));
 	}
 	
 	@Test
-	void testAveragesArray() {
+	public void testAveragesArray() {
 		double[] testData = new double[] {1,2,3,4,5,6,7,8,9,10};
 		
 		double[] result = MathUtils.calculateAverageArray(testData, 2);

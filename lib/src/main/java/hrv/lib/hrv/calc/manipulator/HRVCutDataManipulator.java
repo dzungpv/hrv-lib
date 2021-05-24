@@ -21,9 +21,9 @@ public class HRVCutDataManipulator implements HRVDataManipulator {
 	public RRData manipulate(RRData data) {
 		double[] oldRRY = data.getValueAxis();
 		double[] oldRRX = data.getTimeAxis();
-		
-		var newX = new double[numToKeep];
-		var newY = new double[numToKeep];
+
+		double[] newX = new double[numToKeep];
+		double[] newY = new double[numToKeep];
 
 		for (int i = data.getTimeAxis().length - numToKeep; i < data.getTimeAxis().length; i++) {
 			newX[i - (data.getTimeAxis().length - numToKeep)] = oldRRX[i];

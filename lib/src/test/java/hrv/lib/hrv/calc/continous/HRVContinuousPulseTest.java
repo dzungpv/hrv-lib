@@ -3,14 +3,14 @@ package hrv.lib.hrv.calc.continous;
 import hrv.lib.hrv.RRData;
 import hrv.lib.hrv.calc.parameter.HRVParameter;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class HRVContinuousPulseTest {
+public class HRVContinuousPulseTest {
 
 	@Test
-	void testPulse() {
+	public void testPulse() {
 		RRData data = RRData.createFromRRInterval(new double[] { 1.0, 1.0, 1.0, 1.0 }, TimeUnit.SECOND);
 
 		HRVContinuousHeartRate pulseCalc = new HRVContinuousHeartRate(4);
@@ -23,7 +23,7 @@ class HRVContinuousPulseTest {
 	}
 
 	@Test
-	void testContinuity() {
+	public void testContinuity() {
 		HRVContinuousHeartRate pulseCalc = new HRVContinuousHeartRate(10);
 
 		HRVParameterChangedMockListener listener = new HRVParameterChangedMockListener();

@@ -1,13 +1,13 @@
 package hrv.lib.common;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class RotatingMaxSizeListTest {
+public class RotatingMaxSizeListTest {
 
 	@Test
-	void testRotation() {
+	public void testRotation() {
 		RotatingMaxSizeList<Double> list = new RotatingMaxSizeList<>(new Double[4]);
 		
 		list.add(5.0);
@@ -23,13 +23,13 @@ class RotatingMaxSizeListTest {
 	}
 	
 	@Test
-	void testSize() {
+	public void testSize() {
 		RotatingMaxSizeList<Double> list = new RotatingMaxSizeList<>(new Double[4]);
 		assertEquals(4, list.size());
 	}
 	
 	@Test
-	void testFillRate() {
+	public void testFillRate() {
 		RotatingMaxSizeList<Double> list = new RotatingMaxSizeList<>(new Double[4]);
 		assertEquals(0, list.fillRate());
 		list.add(5.0);

@@ -11,7 +11,7 @@ public class HFCalculator implements HRVPowerSpectrumProcessor {
     @Override
     public HRVParameter process(PowerSpectrum ps) {
 
-        var calcLF = new PowerSpectrumIntegralCalculator(HF_LOWER_BOUND, HF_UPPER_BOUND);
+        PowerSpectrumIntegralCalculator calcLF = new PowerSpectrumIntegralCalculator(HF_LOWER_BOUND, HF_UPPER_BOUND);
         HRVParameter result = calcLF.process(ps);
         return new HRVParameter(HRVParameterEnum.HF, result.getValue() * 1000000, result.getUnit());
     }

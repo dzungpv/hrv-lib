@@ -10,7 +10,7 @@ public class LFCalculator implements HRVPowerSpectrumProcessor {
 
     @Override
     public HRVParameter process(PowerSpectrum ps) {
-        var calcLF = new PowerSpectrumIntegralCalculator(LF_LOWER_BOUND, LF_UPPER_BOUND);
+        PowerSpectrumIntegralCalculator calcLF = new PowerSpectrumIntegralCalculator(LF_LOWER_BOUND, LF_UPPER_BOUND);
         HRVParameter result = calcLF.process(ps);
         return new HRVParameter(HRVParameterEnum.LF, result.getValue() * 1000000, result.getUnit());
     }

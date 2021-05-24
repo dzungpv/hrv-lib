@@ -1,14 +1,14 @@
 package hrv.lib.algorithm;
 
 import hrv.lib.algorithm.search.FindIndexOfClosestValueSorted;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class FindIndexOfClosestValueSortedTest {
+public class FindIndexOfClosestValueSortedTest {
 
 	@Test
-	void testFindIndexOfClosestValueSorted() {
+	public void testFindIndexOfClosestValueSorted() {
 		
 		double[] array = new double[] {2,3,4,5,6,7,8,9,100,101};
 		

@@ -4,14 +4,16 @@ import hrv.lib.hrv.RRData;
 import hrv.lib.hrv.calc.psd.PowerSpectrum;
 import hrv.lib.hrv.calc.psd.StandardPowerSpectralDensityEstimator;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 import java.util.Arrays;
 
-class HFCalculatorTest {
+public class HFCalculatorTest {
 
 	@Test
-	void testCalc() {
+	public void testCalc() {
 		double[] data = new double[16];
 		Arrays.fill(data, 1);
 		

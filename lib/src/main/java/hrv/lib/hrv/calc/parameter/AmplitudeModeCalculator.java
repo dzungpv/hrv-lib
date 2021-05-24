@@ -6,10 +6,10 @@ public class AmplitudeModeCalculator implements HRVDataProcessor {
 
 	@Override
 	public HRVParameter process(RRData data) {
-		var modeCalc = new ModeCalculator();
+		ModeCalculator modeCalc = new ModeCalculator();
 		double mode = modeCalc.process(data).getValue();
 		
-		var counter = 0;
+		int counter = 0;
 		for (double aRRInterval : data.getValueAxis()) {
 			if (!((aRRInterval > mode * 1.05) || (aRRInterval < mode * 0.95)))
 				counter++;

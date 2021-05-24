@@ -1,14 +1,14 @@
 package hrv.lib.hrv;
 
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class RRDataTest {
+public class RRDataTest {
 
 	@Test
-	void testCreation() {
+	public void testCreation() {
 		
 		double[] intervalData = new double[] {1.0, 1.0, 2.5, 1.0};
 		RRData result = RRData.createFromRRInterval(intervalData, TimeUnit.SECOND);

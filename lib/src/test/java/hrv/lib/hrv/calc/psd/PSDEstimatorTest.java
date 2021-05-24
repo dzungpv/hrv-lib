@@ -2,14 +2,14 @@ package hrv.lib.hrv.calc.psd;
 
 import hrv.lib.hrv.RRData;
 import hrv.lib.units.TimeUnit;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.*;
 
-class PSDEstimatorTest {
+public class PSDEstimatorTest {
 
 	@Test
-	void testStandardPSD() {
+	public void testStandardPSD() {
 		double sinHz = 1; //Frequency of the sin function
 		int sampleFrequency = 8; //Sample Frequency in Hz
 		double xLength = 2; //Length of the data.

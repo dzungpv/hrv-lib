@@ -34,8 +34,8 @@ public class RRData {
 	 * @return new RRData object with given RR-Interval data.
 	 */
 	public static RRData createFromRRInterval(double[] rrInterval, TimeUnit unit) {
-		var rrTimeAxis = new double[rrInterval.length];
-		for (var i = 1; i < rrInterval.length; i++) {
+		double[] rrTimeAxis = new double[rrInterval.length];
+		for (int i = 1; i < rrInterval.length; i++) {
 			rrTimeAxis[i] = rrTimeAxis[i - 1] + rrInterval[i - 1];
 		}
 
